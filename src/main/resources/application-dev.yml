@@ -1,0 +1,13 @@
+server:
+  port: 8080
+#  context-path: /girl
+
+#cupSize: B
+#age: 18
+#content: "cupSize:${cupSize},age:${age}"
+
+#简化并分组
+girl:
+  cupSize: B
+  age: 18
+#  yml语法中相同的头头部可以共用，在子目录“：”后需要加空格分隔

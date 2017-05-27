@@ -1,0 +1,29 @@
+#server:
+#  port: 8080
+#  context-path: /girl
+
+#cupSize: B
+#age: 18
+#content: "cupSize:${cupSize},age:${age}"
+
+#简化并分组
+#girl:
+#  cupSize: B
+#  age: 18
+#  yml语法中相同的头头部可以共用，在子目录“：”后需要加空格分隔
+spring:
+  profiles:
+    active: dev
+#    active: prod     使用不同的配置,主要以后缀名为标识，若未找到相应后缀的配置，其中需要的值就会默认为null
+  datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/test
+      username: root
+      password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update #hibernate中的create和update写这里
+                        #create-drop ：应用停下的时候就会把表删除
+                        #none ：什么都不用做
+                        #validate：验证实体与数据库中的表结构是否一致，否则会报错
+    show-sql: true #在控制台打印sql语句
